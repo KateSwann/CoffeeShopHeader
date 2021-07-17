@@ -9,7 +9,58 @@
     <title>Coffee Shop</title>
 </head>
 <body>
-    <h1>HELLO</h1>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-logo">Logo</div>
+            <div class="header-city">
+                <span class="header-city__label">Москва</span>
+            </div>
+
+            <nav class="header-nav">
+                <ul class="header-nav__list">
+                    <li class="header-nav__list-item">Каталог</li>
+                    <li class="header-nav__list-item">Услуга</li>
+                    <li class="header-nav__list-item">Доставка и оплата</li>
+                    <li class="header-nav__list-item">Блог</li>
+                    <li class="header-nav__list-item">О нас</li>
+                    <li class="header-nav__list-item">Контакты</li>
+                </ul>
+            </nav>
+
+            <ul class="header-buttons-group">
+                <li class="header-buttons-group__item
+                           header-button">
+                    <a href="#" class="header-button__link">
+                        <div class="header-button__icon">&#128222;</div>
+                    </a>
+                </li>
+
+                <li class="header-buttons-group__item
+                           header-button">
+                    <a href="#" class="header-button__link">
+                        <div class="header-button__icon">&#129492;</div>
+                    </a>
+                </li>
+
+                <li class="header-buttons-group__item
+                           header-button
+                           cart-button">
+                    <a href="#" class="header-button__link">
+                        <div class="header-button__icon">&#128722;</div>
+                    </a>
+
+                    <div class="header-button__info header-button__info--desktop">
+                        <span class="header-button__info-main">0 &#8381;</span>
+                        <span class="header-button__info-secondary">12 товаров</span>
+                    </div>
+
+                    <div class="header-button__info header-button__info--mobile">
+                        <span class="header-button__info-main">0</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
     <script src="main.js"></script>
 </body>
 </html>
