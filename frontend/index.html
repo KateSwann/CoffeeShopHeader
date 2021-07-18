@@ -12,6 +12,7 @@
     <header class="header">
         <div class="header-content">
             <div class="header-logo">Logo</div>
+
             <div class="header-city">
                 <span class="header-city__label">Москва</span>
             </div>
@@ -29,38 +30,106 @@
 
             <ul class="header-buttons-group">
                 <li class="header-buttons-group__item
-                           header-button">
+                           header-button
+                           header-button--phone">
                     <a href="#" class="header-button__link">
-                        <div class="header-button__icon">&#128222;</div>
-                    </a>
-                </li>
-
-                <li class="header-buttons-group__item
-                           header-button">
-                    <a href="#" class="header-button__link">
-                        <div class="header-button__icon">&#129492;</div>
+                        <svg class="icon
+                                    icon--phone"
+                             viewBox="0 0 24 24">
+                            <path d="M14.3913 16.699C14.3913 16.699 16.2471 15.6365 16.7329
+                                        15.3812C17.2174 15.125 17.7193 15.0604 18.0241 15.2465C18.4856
+                                        15.5288 22.3612 18.107 22.6876 18.3353C23.0139 18.564 23.1711
+                                        19.2171 22.7224 19.8569C22.2755 20.4968 20.214 23.0268 19.3404
+                                        22.9998C18.4654 22.9714 14.8276 22.8916 7.96779 16.0298C1.10931
+                                        9.17027 1.02819 5.5315 1.00023 4.65653C0.972272 3.78202 3.50226
+                                        1.71994 4.1421 1.2726C4.78284 0.825722 5.43688 0.993933 5.66422
+                                        1.30835C5.92271 1.66632 8.47104 5.52967 8.75154 5.97243C8.94358
+                                        6.27493 8.873 6.77957 8.61679 7.26449C8.36196 7.75033 7.29954
+                                        9.60615 7.29954 9.60615C7.29954 9.60615 8.04846 10.8835 10.5812
+                                        13.4159C13.1144 15.9487 14.3913 16.699 14.3913 16.699Z"
+                                        stroke-width="1.5" stroke-miterlimit="10"/>
+                        </svg>
                     </a>
                 </li>
 
                 <li class="header-buttons-group__item
                            header-button
-                           cart-button">
+                           header-button--user">
                     <a href="#" class="header-button__link">
-                        <div class="header-button__icon">&#128722;</div>
+                        <svg class="icon
+                                    icon--user"
+                             viewBox="0 0 24 24">
+                            <path d="M24 12C24 5.36774 18.633 0 12 0C5.36774 0 0 5.367 0 12C0 18.5735
+                                    5.32214 24 12 24C18.6504 24 24 18.6037 24 12ZM12 1.40625C17.8414
+                                    1.40625 22.5938 6.15857 22.5938 12C22.5938 14.1368 21.9582 16.1907
+                                    20.7795 17.9304C16.0466 12.8394 7.96198 12.8302 3.22046
+                                    17.9304C2.04181 16.1907 1.40625 14.1368 1.40625 12C1.40625 6.15857
+                                    6.15857 1.40625 12 1.40625ZM4.09753 19.0547C8.30566 14.3346
+                                    15.6954 14.3357 19.9023 19.0547C15.6801 23.7784 8.32159 23.7799
+                                    4.09753 19.0547Z"/>
+                            <path d="M12 12.7031C14.3262 12.7031 16.2188 10.8105 16.2188
+                                    8.48438V7.07812C16.2188 4.75195 14.3262 2.85938 12 2.85938C9.67383
+                                    2.85938 7.78125 4.75195 7.78125 7.07812V8.48438C7.78125 10.8105
+                                    9.67383 12.7031 12 12.7031ZM9.1875 7.07812C9.1875 5.52722 10.4491
+                                    4.26562 12 4.26562C13.5509 4.26562 14.8125 5.52722 14.8125
+                                    7.07812V8.48438C14.8125 10.0353 13.5509 11.2969 12 11.2969C10.4491
+                                    11.2969 9.1875 10.0353 9.1875 8.48438V7.07812Z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <li class="header-buttons-group__item
+                           header-button
+                           header-button--cart">
+                    <a href="#" class="header-button__link">
+                        <svg class="icon
+                                    icon--cart"
+                            viewBox="0 0 20 24">
+                            <path d="M20 24H0L0.907549 5.49152H19.0924L20 24ZM1.34012
+                                    22.7797H18.6599L17.8711 6.71186H2.12892L1.34012 22.7797Z"/>
+                            <path d="M14.8771 6.1017H13.6048V4.67797C13.6048 3.76095 13.225
+                                    2.88149 12.549 2.23305C11.873 1.58462 10.9561 1.22034 10.0001
+                                    1.22034C9.04402 1.22034 8.12714 1.58462 7.45112 2.23305C6.7751
+                                    2.88149 6.39531 3.76095 6.39531 4.67797V6.1017H5.12305V4.67797C5.12305
+                                    3.43729 5.63687 2.24743 6.55149 1.37014C7.46611 0.492856 8.7066 0
+                                    10.0001 0C11.2935 0 12.534 0.492856 13.4486 1.37014C14.3632 2.24743
+                                    14.8771 3.43729 14.8771 4.67797V6.1017Z"/>
+                            <path d="M5.75906 10.6413C6.2275 10.6413 6.60724 10.2771 6.60724
+                                    9.82778C6.60724 9.37846 6.2275 9.01422 5.75906 9.01422C5.29063
+                                    9.01422 4.91089 9.37846 4.91089 9.82778C4.91089 10.2771 5.29063
+                                    10.6413 5.75906 10.6413Z"/>
+                            <path d="M14.241 10.6413C14.7094 10.6413 15.0892 10.2771 15.0892
+                                    9.82778C15.0892 9.37846 14.7094 9.01422 14.241 9.01422C13.7726 9.01422
+                                    13.3928 9.37846 13.3928 9.82778C13.3928 10.2771 13.7726 10.6413 14.241
+                                    10.6413Z"/>
+                        </svg>
                     </a>
 
-                    <div class="header-button__info header-button__info--desktop">
-                        <span class="header-button__info-main">0 &#8381;</span>
-                        <span class="header-button__info-secondary">12 товаров</span>
+                    <div class="button-info-desktop">
+                        <span class="button-info-desktop__main">0 &#8381;</span>
+                        <span class="button-info-desktop__secondary">12 товаров</span>
                     </div>
 
-                    <div class="header-button__info header-button__info--mobile">
-                        <span class="header-button__info-main">0</span>
+                    <div class="button-info-mobile">
+                        <span class="button-info-mobile__main">12</span>
                     </div>
+                </li>
+
+                <li class="header-buttons-group__item
+                           header-button
+                           header-button--menu">
+                    <a href="#" class="header-button__link">
+                        <svg class="icon
+                                    icon--menu"
+                            viewBox="0 0 16 9">
+                            <path stroke-width="1.5" d="M15.778 1.417H.222M15.778 8.083H.222"/>
+                        </svg>
+                    </a>
                 </li>
             </ul>
         </div>
     </header>
+
     <script src="main.js"></script>
 </body>
 </html>
