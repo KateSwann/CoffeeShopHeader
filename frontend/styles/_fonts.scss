@@ -1,7 +1,11 @@
+// Roboto Mono
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+// Neue Machina
 @font-face {
     font-family: 'Neue Machina Light';
-    src: url('../fonts/NeueMachina-Light.woff2') format('woff2'),
-        url('../fonts/NeueMachina-Light.woff') format('woff');
+    src: url('../fonts/NeueMachina/NeueMachina-Light.woff2') format('woff2'),
+        url('../fonts/NeueMachina/NeueMachina-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -9,8 +13,8 @@
 
 @font-face {
     font-family: 'Neue Machina';
-    src: url('../fonts/NeueMachina-Regular.woff2') format('woff2'),
-        url('../fonts/NeueMachina-Regular.woff') format('woff');
+    src: url('../fonts/NeueMachina/NeueMachina-Regular.woff2') format('woff2'),
+        url('../fonts/NeueMachina/NeueMachina-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,9 +22,19 @@
 
 @font-face {
     font-family: 'Neue Machina Bold';
-    src: url('../fonts/NeueMachina-Ultrabold.woff2') format('woff2'),
-        url('../fonts/NeueMachina-Ultrabold.woff') format('woff');
+    src: url('../fonts/NeueMachina/NeueMachina-Ultrabold.woff2') format('woff2'),
+        url('../fonts/NeueMachina/NeueMachina-Ultrabold.woff') format('woff');
     font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+// WhyteInktrap
+@font-face {
+    font-family: 'Whyte Inktrap';
+    src: url('../fonts/WhyteInktrap/WhyteInktrap-Medium.woff2') format('woff2'),
+        url('../fonts/WhyteInktrap/WhyteInktrap-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }

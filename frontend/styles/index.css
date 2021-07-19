@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @font-face {
   font-family: 'Neue Machina Light';
-  src: url("../fonts/NeueMachina-Light.woff2") format("woff2"), url("../fonts/NeueMachina-Light.woff") format("woff");
+  src: url("../fonts/NeueMachina/NeueMachina-Light.woff2") format("woff2"), url("../fonts/NeueMachina/NeueMachina-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,7 @@
 
 @font-face {
   font-family: 'Neue Machina';
-  src: url("../fonts/NeueMachina-Regular.woff2") format("woff2"), url("../fonts/NeueMachina-Regular.woff") format("woff");
+  src: url("../fonts/NeueMachina/NeueMachina-Regular.woff2") format("woff2"), url("../fonts/NeueMachina/NeueMachina-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,8 +17,16 @@
 
 @font-face {
   font-family: 'Neue Machina Bold';
-  src: url("../fonts/NeueMachina-Ultrabold.woff2") format("woff2"), url("../fonts/NeueMachina-Ultrabold.woff") format("woff");
+  src: url("../fonts/NeueMachina/NeueMachina-Ultrabold.woff2") format("woff2"), url("../fonts/NeueMachina/NeueMachina-Ultrabold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Whyte Inktrap';
+  src: url("../fonts/WhyteInktrap/WhyteInktrap-Medium.woff2") format("woff2"), url("../fonts/WhyteInktrap/WhyteInktrap-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -25,6 +34,11 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  height: 2000px;
+  background: darkolivegreen;
 }
 
 *,
@@ -116,11 +130,16 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-radius: 50%;
 }
 
 .header .header-button {
   color: #000;
   position: relative;
+}
+
+.header .header-button--phone:hover .icon--phone path {
+  stroke: #3E7EDB;
 }
 
 .header .header-button .icon--phone {
@@ -169,6 +188,14 @@ a {
   stroke: #000;
   -webkit-transition: all .1s ease-in;
   transition: all .1s ease-in;
+}
+
+.header .header-button--phone {
+  position: relative;
+}
+
+.header .header-button--phone:hover .header-contacts-wrapper {
+  display: block;
 }
 
 .header .header-button__link {
@@ -234,16 +261,80 @@ a {
   margin-left: -2px;
 }
 
-@media (max-width: 767.99px) {
+.header .header-contacts-wrapper {
+  display: none;
+  position: absolute;
+  top: 100%;
+  padding-top: 30px;
+}
+
+.header .header-contacts {
+  border: 1px solid #F0F0F0;
+  border-radius: 8px;
+  background-color: #FFF;
+  position: relative;
+}
+
+.header .header-contacts::before, .header .header-contacts::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.header .header-contacts::before {
+  border-width: 0 13px 15px 13px;
+  border-color: transparent transparent #F0F0F0 transparent;
+  bottom: 100%;
+}
+
+.header .header-contacts::after {
+  border-width: 0 12px 14px 12px;
+  border-color: transparent transparent #FFF transparent;
+  bottom: calc(100% - 1px);
+}
+
+.header .header-contacts__title {
+  display: block;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+  opacity: .6;
+}
+
+.header .header-contacts__number {
+  color: #000;
+  font-family: 'Whyte Inktrap';
+}
+
+.header .header-contacts__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 48px;
+  margin-top: 6px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+  background-color: #FCDD09;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
   .header .header-city {
     display: none;
   }
   .header .header-buttons-group__item:not(:first-child) {
     margin-left: 8px;
-  }
-  .header .header-button__link {
-    width: 36px;
-    height: 36px;
   }
   .header .header-button .icon--phone {
     width: 18px;
@@ -257,9 +348,31 @@ a {
     width: 14px;
     height: 6px;
   }
+  .header .header-button__link {
+    width: 36px;
+    height: 36px;
+  }
+  .header .header-contacts {
+    width: 234px;
+    padding: 30px 16px 16px;
+  }
+  .header .header-contacts__row {
+    margin: 0 4px 12px;
+  }
+  .header .header-contacts__title {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .header .header-contacts__number {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .header .header-contacts__button {
+    font-size: 16px;
+  }
 }
 
-@media (max-width: 1365.99px) {
+@media (max-width: 1365px) {
   .header .header-nav {
     display: none;
   }
@@ -278,6 +391,24 @@ a {
   .header .header-button__link {
     width: 40px;
     height: 40px;
+  }
+  .header .header-contacts {
+    width: 234px;
+    padding: 30px 16px 16px;
+  }
+  .header .header-contacts__row {
+    margin: 0 4px 12px;
+  }
+  .header .header-contacts__title {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .header .header-contacts__number {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .header .header-contacts__button {
+    font-size: 16px;
   }
 }
 

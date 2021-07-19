@@ -57,12 +57,23 @@ $button-padding-mobile: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
         }
     }
 
     .header-button {
         color: $text-color;
         position: relative;
+
+        &--phone {
+            &:hover {
+                .icon--phone {
+                    path {
+                        stroke: #3E7EDB;
+                    }
+                }
+            }
+        }
 
         .icon {
             &--phone {
@@ -106,6 +117,16 @@ $button-padding-mobile: 8px;
                 path {
                     stroke: #000;
                     transition: all .1s ease-in;
+                }
+            }
+        }
+
+        &--phone {
+            position: relative;
+
+            &:hover {
+                .header-contacts-wrapper {
+                    display: block;
                 }
             }
         }
@@ -166,9 +187,71 @@ $button-padding-mobile: 8px;
             margin-left: -2px;
         }
     }
+
+    .header-contacts-wrapper {
+        display: none;
+        position: absolute;
+        top: 100%;
+        padding-top: 30px;
+    }
+
+    .header-contacts {
+        border: 1px solid #F0F0F0;
+        border-radius: 8px;
+        background-color: #FFF;
+        position: relative;
+
+        &::before,
+        &::after {
+            display: block;
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &::before {
+            border-width: 0 13px 15px 13px;
+            border-color: transparent transparent #F0F0F0 transparent;
+            bottom: 100%;
+        }
+
+        &::after {
+            border-width: 0 12px 14px 12px;
+            border-color: transparent transparent #FFF transparent;
+            bottom: calc(100% - 1px);
+        }
+
+        &__title {
+            display: block;
+            color: $text-color;
+            font-family: 'Roboto Mono', monospace;
+            opacity: .6;
+        }
+
+        &__number {
+            color: $text-color;
+            font-family: 'Whyte Inktrap';
+        }
+
+        &__button {
+            display: flex;
+            height: 48px;
+            margin-top: 6px;
+            justify-content: center;
+            align-items: center;
+            color: $text-color;
+            background-color: #FCDD09;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
 }
 
-@media (max-width: 767.99px) {
+@media (max-width: 767px) {
     .header {
         .header-city {
             display: none;
@@ -183,11 +266,6 @@ $button-padding-mobile: 8px;
         }
 
         .header-button {
-            &__link {
-                width: $button-size-mobile;
-                height: $button-size-mobile;
-            }
-
             .icon {
                 &--phone {
                     width: 18px;
@@ -204,11 +282,39 @@ $button-padding-mobile: 8px;
                     height: 6px;
                 }
             }
+
+            &__link {
+                width: $button-size-mobile;
+                height: $button-size-mobile;
+            }
+        }
+
+        .header-contacts {
+            width: 234px;
+            padding: 30px 16px 16px;
+
+            &__row {
+                margin: 0 4px 12px;
+            }
+
+            &__title {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            &__number {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+
+            &__button {
+                font-size: 16px;
+            }
         }
     }
 }
 
-@media (max-width: 1365.99px) {
+@media (max-width: 1365px) {
     .header {
         .header-nav {
             display: none;
@@ -242,10 +348,33 @@ $button-padding-mobile: 8px;
                 height: $button-size-desktop;
             }
         }
+
+        .header-contacts {
+            width: 234px;
+            padding: 30px 16px 16px;
+
+            &__row {
+                margin: 0 4px 12px;
+            }
+
+            &__title {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            &__number {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+
+            &__button {
+                font-size: 16px;
+            }
+        }
     }
 }
 
-@media (min-width: 768px) and (max-width: 1365.99px) {
+@media (min-width: 768px) and (max-width: 1365px) {
     .header {}
 }
 
