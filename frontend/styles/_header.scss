@@ -4,7 +4,8 @@ $text-color: #000;
 $header-height-desktop: 88px;
 $header-padding-desktop: 0 48px;
 
-$button-color: #F0F0F0;
+$button-color: #FFF;
+$button-color-scrolled: #F0F0F0;
 $button-size-desktop: 40px;
 $button-size-mobile: 36px;
 $button-padding-desktop: 12px;
@@ -14,16 +15,28 @@ $button-padding-mobile: 8px;
     height: $header-height-desktop;
     width: 100%;
     display: flex;
+    position: absolute;
     align-items: center;
     padding: $header-padding-desktop;
-    background-color: gold;
+    transition: background-color .1s ease-in;
+    // background-color: gold;
+
+    &.scrolled {
+        background-color: #FFF;
+        position: fixed;
+
+        .header-button__link,
+        .header-city {
+            background-color: $button-color-scrolled;
+        }
+    }
 
     .header-content {
         display: flex;
         flex: 1;
         align-items: center;
         justify-content: space-between;
-        background-color: brown;
+        // background-color: brown;
     }
 
     .header-city {
@@ -137,6 +150,7 @@ $button-padding-mobile: 8px;
             justify-content: center;
             border-radius: 50%;
             background-color: $button-color;
+            transition: background-color .1s ease-in;;
 
             &:hover {
                 .icon {
