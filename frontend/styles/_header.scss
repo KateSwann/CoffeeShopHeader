@@ -192,7 +192,6 @@ $button-padding-mobile: 8px;
         display: none;
         position: absolute;
         top: 100%;
-        padding-top: 30px;
     }
 
     .header-contacts {
@@ -289,26 +288,32 @@ $button-padding-mobile: 8px;
             }
         }
 
+        .header-contacts-wrapper {
+            padding-top: 18px;
+        }
+
         .header-contacts {
-            width: 234px;
-            padding: 30px 16px 16px;
+            width: 212px;
+            padding: 24px 20px 20px;
+            text-align: center;
 
             &__row {
-                margin: 0 4px 12px;
+                margin-bottom: 16px;
             }
 
             &__title {
-                font-size: 14px;
+                font-size: 12px;
                 line-height: 1.6;
+                margin-bottom: 8px;
             }
 
             &__number {
                 font-size: 20px;
-                line-height: 1.6;
+                line-height: .95;
             }
 
             &__button {
-                font-size: 16px;
+                font-size: 13px;
             }
         }
     }
@@ -347,6 +352,10 @@ $button-padding-mobile: 8px;
                 width: $button-size-desktop;
                 height: $button-size-desktop;
             }
+        }
+
+        .header-contacts-wrapper {
+            padding-top: 30px;
         }
 
         .header-contacts {

@@ -265,7 +265,6 @@ a {
   display: none;
   position: absolute;
   top: 100%;
-  padding-top: 30px;
 }
 
 .header .header-contacts {
@@ -352,23 +351,28 @@ a {
     width: 36px;
     height: 36px;
   }
+  .header .header-contacts-wrapper {
+    padding-top: 18px;
+  }
   .header .header-contacts {
-    width: 234px;
-    padding: 30px 16px 16px;
+    width: 212px;
+    padding: 24px 20px 20px;
+    text-align: center;
   }
   .header .header-contacts__row {
-    margin: 0 4px 12px;
+    margin-bottom: 16px;
   }
   .header .header-contacts__title {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
+    margin-bottom: 8px;
   }
   .header .header-contacts__number {
     font-size: 20px;
-    line-height: 1.6;
+    line-height: .95;
   }
   .header .header-contacts__button {
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
@@ -391,6 +395,9 @@ a {
   .header .header-button__link {
     width: 40px;
     height: 40px;
+  }
+  .header .header-contacts-wrapper {
+    padding-top: 30px;
   }
   .header .header-contacts {
     width: 234px;
