@@ -342,6 +342,49 @@ a {
   cursor: pointer;
 }
 
+.header .nav-item--has-menu:hover .nav-item__title::after {
+  width: 2px;
+}
+
+.header .nav-item--has-menu .nav-item__title::after {
+  display: block;
+  width: 10px;
+  height: 2px;
+  content: '';
+  position: absolute;
+  left: calc(100% + 8px);
+  bottom: 6px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#000), color-stop(50%, #000), color-stop(50%, transparent), to(transparent));
+  background-image: linear-gradient(90deg, #000, #000 50%, transparent 50%, transparent 100%);
+  background-size: 4px 4px;
+  border: none;
+  transition: width .2s ease;
+  -webkit-transition: width .2s ease;
+}
+
+.header .nav-item:hover .nav-item__title::before {
+  width: 100%;
+  left: 0;
+  background: #000;
+}
+
+.header .nav-item__title {
+  position: relative;
+}
+
+.header .nav-item__title::before {
+  display: block;
+  width: 0;
+  height: 1px;
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+  background: #000;
+  transition: width .2s ease;
+  -webkit-transition: width .2s ease;
+}
+
 @media (max-width: 767px) {
   .header .header-city {
     display: none;
