@@ -106,6 +106,14 @@ a {
           justify-content: space-between;
 }
 
+.header .header-logo {
+  width: 136px;
+  height: 32px;
+  margin-right: 24px;
+  background: url("../images/logo-max.png") center no-repeat;
+  background-size: contain;
+}
+
 .header .header-city {
   padding: 10px 14px 9px;
   background-color: #FFF;
@@ -114,6 +122,12 @@ a {
   line-height: 0.95;
   cursor: pointer;
   margin-right: auto;
+  -webkit-transition: color .1s ease-in;
+  transition: color .1s ease-in;
+}
+
+.header .header-city:hover {
+  color: #3E7EDB;
 }
 
 .header .header-nav {
@@ -133,11 +147,9 @@ a {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  padding: 0 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
 }
 
 .header .header-menu {
@@ -145,14 +157,78 @@ a {
   left: 0;
   right: 0;
   top: 100%;
-  padding: 0 36px;
+  padding: 20px 40px 33px;
   background-color: #FFF;
   visibility: hidden;
+}
+
+.header .header-menu--catalogue .categories-nav {
+  margin-left: 332px;
+}
+
+.header .header-menu--service .categories-nav {
+  margin-left: 432px;
 }
 
 .header .header-menu__content {
   max-width: 1270px;
   margin: 0 auto;
+}
+
+.header .categories-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.header .categories-nav__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1;
+          flex: 0 1;
+}
+
+.header .categories-nav-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 72px;
+}
+
+.header .categories-nav-section__main-category {
+  margin-bottom: 20px;
+  color: #000;
+  font: 20px/1.2 'Neue Machina';
+}
+
+.header .categories-nav-section__main-category span {
+  padding-right: 12px;
+  display: inline-block;
+}
+
+.header .categories-nav-section__main-category span::after {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 10px;
+  margin-right: -16px;
+  background-image: url(../images/arrow-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.header .categories-nav-section__subcategory {
+  font: 14px/2 'Roboto Mono';
+  color: #000;
+  opacity: .6;
+  white-space: nowrap;
 }
 
 .header .header-buttons-group {
@@ -367,9 +443,13 @@ a {
       -ms-flex-align: center;
           align-items: center;
   color: #000;
-  background-color: #FCDD09;
+  background-color: #fddd09;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.header .header-contacts__button:hover {
+  background-color: rgba(253, 221, 9, 0.8);
 }
 
 .header .nav-item--has-menu:hover .nav-item__title::after {
@@ -401,6 +481,15 @@ a {
 .header .nav-item:hover .header-menu {
   visibility: visible;
   opacity: 1;
+}
+
+.header .nav-item:hover .categories-nav {
+  opacity: 1;
+}
+
+.header .nav-item__header {
+  padding: 0 20px;
+  cursor: pointer;
 }
 
 .header .nav-item__title {
