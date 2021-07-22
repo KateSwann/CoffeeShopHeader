@@ -4,8 +4,14 @@ html {
 
 body {
     position: relative;
-    height: 2000px;
-    background: darkolivegreen;
+    height: 2500px;
+    background: rgb(62,126,219);
+    background: linear-gradient(180deg, rgba(62,126,219,1) 0%,
+                                        rgba(62,126,219,1) 33%,
+                                        rgba(74,147,84,1) 33%,
+                                        rgba(74,147,84,1) 66%,
+                                        rgba(252,229,99,1) 66%,
+                                        rgba(252,229,99,1) 100%);
 }
 
 *,

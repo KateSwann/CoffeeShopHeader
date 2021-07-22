@@ -38,8 +38,10 @@ html {
 
 body {
   position: relative;
-  height: 2000px;
-  background: darkolivegreen;
+  height: 2500px;
+  background: #3e7edb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e7edb), color-stop(33%, #3e7edb), color-stop(33%, #4a9354), color-stop(66%, #4a9354), color-stop(66%, #fce563), to(#fce563));
+  background: linear-gradient(180deg, #3e7edb 0%, #3e7edb 33%, #4a9354 33%, #4a9354 66%, #fce563 66%, #fce563 100%);
 }
 
 *,
@@ -71,17 +73,18 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 48px;
-  -webkit-transition: background-color .1s ease-in;
-  transition: background-color .1s ease-in;
+  -webkit-transition: background-color .2s linear;
+  transition: background-color .2s linear;
 }
 
-.header.scrolled {
+.header:hover, .header.highlighted {
   background-color: #FFF;
   position: fixed;
 }
 
-.header.scrolled .header-button__link,
-.header.scrolled .header-city {
+.header:hover .header-button__link,
+.header:hover .header-city, .header.highlighted .header-button__link,
+.header.highlighted .header-city {
   background-color: #F0F0F0;
 }
 
@@ -89,6 +92,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1270px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -111,18 +117,42 @@ a {
 }
 
 .header .header-nav {
+  height: 100%;
   margin: 0 auto;
 }
 
 .header .header-nav__list {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .header .header-nav__list-item {
-  margin: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  padding: 0 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
+}
+
+.header .header-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 0 36px;
+  background-color: #FFF;
+  visibility: hidden;
+}
+
+.header .header-menu__content {
+  max-width: 1270px;
+  margin: 0 auto;
 }
 
 .header .header-buttons-group {
@@ -222,8 +252,8 @@ a {
           justify-content: center;
   border-radius: 50%;
   background-color: #FFF;
-  -webkit-transition: background-color .1s ease-in;
-  transition: background-color .1s ease-in;
+  -webkit-transition: background-color .2s linear;
+  transition: background-color .2s linear;
 }
 
 .header .header-button__link:hover .icon--phone path, .header .header-button__link:hover .icon--menu path {
@@ -366,6 +396,11 @@ a {
   width: 100%;
   left: 0;
   background: #000;
+}
+
+.header .nav-item:hover .header-menu {
+  visibility: visible;
+  opacity: 1;
 }
 
 .header .nav-item__title {

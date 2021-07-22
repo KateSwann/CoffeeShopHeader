@@ -5,7 +5,7 @@ $header-height-desktop: 88px;
 $header-padding-desktop: 0 48px;
 
 $button-color: #FFF;
-$button-color-scrolled: #F0F0F0;
+$button-color-highlighted: #F0F0F0;
 $button-size-desktop: 40px;
 $button-size-mobile: 36px;
 $button-padding-desktop: 12px;
@@ -18,25 +18,27 @@ $button-padding-mobile: 8px;
     position: absolute;
     align-items: center;
     padding: $header-padding-desktop;
-    transition: background-color .1s ease-in;
-    // background-color: gold;
+    transition: background-color .2s linear;
 
-    &.scrolled {
+    &:hover,
+    &.highlighted {
         background-color: #FFF;
         position: fixed;
 
         .header-button__link,
         .header-city {
-            background-color: $button-color-scrolled;
+            background-color: $button-color-highlighted;
         }
     }
 
     .header-content {
         display: flex;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 1270px;
         flex: 1;
         align-items: center;
         justify-content: space-between;
-        // background-color: brown;
     }
 
     .header-city {
@@ -50,15 +52,35 @@ $button-padding-mobile: 8px;
     }
 
     .header-nav {
+        height: 100%;
         margin: 0 auto;
 
         &__list {
+            height: 100%;
             display: flex;
         }
 
         &__list-item {
-            margin: 0 20px;
+            display: flex;
+            height: 100%;
+            padding: 0 20px;
+            align-items: center;
             cursor: pointer;
+        }
+    }
+
+    .header-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        padding: 0 36px;
+        background-color: #FFF;
+        visibility: hidden;
+
+        &__content {
+            max-width: 1270px;
+            margin: 0 auto;
         }
     }
 
@@ -150,7 +172,7 @@ $button-padding-mobile: 8px;
             justify-content: center;
             border-radius: 50%;
             background-color: $button-color;
-            transition: background-color .1s ease-in;;
+            transition: background-color .2s linear;
 
             &:hover {
                 .icon {
@@ -298,6 +320,11 @@ $button-padding-mobile: 8px;
                     left: 0;
                     background: $text-color;
                 }
+            }
+
+            .header-menu {
+                visibility: visible;
+                opacity: 1;
             }
         }
 
