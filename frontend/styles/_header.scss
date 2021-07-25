@@ -1,8 +1,6 @@
 $background-color-accent: #FCDD09;
 
 $text-color: #000;
-$header-height-desktop: 88px;
-$header-padding-desktop: 0 48px;
 
 $button-color: #FFF;
 $button-color-highlighted: #F0F0F0;
@@ -11,6 +9,8 @@ $button-size-desktop: 40px;
 $button-size-mobile: 36px;
 $button-padding-desktop: 12px;
 $button-padding-mobile: 8px;
+
+$transition: all .3s ease-in-out;
 
 // .go {
 //     background-color: gold;
@@ -29,12 +29,10 @@ $button-padding-mobile: 8px;
 // }
 
 .header {
-    height: $header-height-desktop;
     width: 100%;
     display: flex;
     position: absolute;
     align-items: center;
-    padding: $header-padding-desktop;
     transition: background-color .2s linear;
 
     // Состояние шапки при наведении или прокручивании
@@ -60,13 +58,13 @@ $button-padding-mobile: 8px;
     }
 
     .header-logo-container {
-        margin-right: 24px;
         position: relative;
+        transition: $transition;
     }
 
     .header-logo {
         position: absolute;
-        transition: all .3s ease-in-out;
+        transition: $transition;
         width: 100%;
     }
 
@@ -483,8 +481,12 @@ $button-padding-mobile: 8px;
 
 @media (max-width: 767px) {
     .header {
+        padding: 0 20px;
+
         // Состояние шапки до прокручивания
         &.static {
+            height: 84px;
+
             .header-logo-container {
                 width: 119px;
                 height: 28px;
@@ -506,6 +508,8 @@ $button-padding-mobile: 8px;
 
         // Состояние шапки после прокручивания
         &.scrolled {
+            height: 64px;
+
             .header-logo-container {
                 width: 30px;
                 height: 25px;
@@ -614,9 +618,12 @@ $button-padding-mobile: 8px;
     .header {
         // Состояние шапки до прокручивания
         &.static {
+            height: 96px;
+
             .header-logo-container {
                 width: 136px;
                 height: 32px;
+                margin-right: 24px;
             }
 
             .header-logo {
@@ -635,9 +642,12 @@ $button-padding-mobile: 8px;
 
         // Состояние шапки после прокручивания
         &.scrolled {
+            height: 88px;
+
             .header-logo-container {
                 width: 40px;
                 height: 34px;
+                margin-right: 40px;
             }
 
             .header-logo {
@@ -698,8 +708,16 @@ $button-padding-mobile: 8px;
     }
 }
 
+@media (min-width: 768px) and (max-width: 1365px) {
+    .header {
+        padding: 0 40px;
+    }
+}
+
 @media (min-width: 1366px) {
     .header {
+        padding: 0 48px;
+
         .button-info-mobile {
             display: none;
         }
