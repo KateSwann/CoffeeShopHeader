@@ -90,6 +90,23 @@ $button-padding-mobile: 8px;
         background-color: #FFF;
         visibility: hidden;
 
+        opacity: 0;
+        z-index: -1;
+        display: none;
+        perspective: 1000px;
+        animation: growDown .3s ease-in-out forwards;
+        transform-origin: top center;
+        transition-property: all;
+
+        @keyframes growDown {
+            0% {
+                transform: scaleY(0);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
         &--catalogue {
             .categories-nav {
                 margin-left: 332px;
@@ -110,8 +127,9 @@ $button-padding-mobile: 8px;
 
     .categories-nav {
         display: flex;
+        visibility: hidden;
         opacity: 0;
-        transition: opacity 0.5s linear;
+        // transition: opacity .5s linear .3s;
 
         &__column {
             flex: 0 1;
@@ -397,12 +415,27 @@ $button-padding-mobile: 8px;
             }
 
             .header-menu {
+                display: block;
                 visibility: visible;
                 opacity: 1;
             }
 
             .categories-nav {
+                visibility: visible;
                 opacity: 1;
+                animation: showsUp .5s ease-out backwards;
+                animation-delay: .3s;
+                transform-origin: left center;
+                transition-property: opacity;
+
+                @keyframes showsUp {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
             }
         }
 
