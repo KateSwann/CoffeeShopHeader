@@ -10,17 +10,26 @@
 </head>
 <body>
     <header id="header"
-            class="header">
+            class="header static">
         <div class="header-content">
             <a href="#"
                onclick="return false;"
-               class="header-logo"></a>
+               class="header-logo-container">
+               <img class="header-logo
+                           header-logo--scrolled"
+                           src="images/logo-scrolled.png"
+                           alt="">
+               <img class="header-logo
+                           header-logo--static"
+                           src="images/logo-static.png" alt="">
+            </a>
 
             <div class="header-city">
                 <span class="header-city__label">Москва</span>
             </div>
 
-            <nav class="header-nav">
+            <nav id="header-nav"
+                 class="header-nav">
                 <ul class="header-nav__list">
                     <li class="header-nav__list-item
                                nav-item
@@ -97,7 +106,8 @@
                             <span class="nav-item__title">Услуга</span>
                         </div>
 
-                        <div class="nav-item__menu
+                        <div id="header-menu"
+                             class="nav-item__menu
                                     header-menu
                                     header-menu--service">
                             <div class="header-menu__content">

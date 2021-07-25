@@ -21,8 +21,52 @@ $button-padding-mobile: 8px;
     padding: $header-padding-desktop;
     transition: background-color .2s linear;
 
+
+    // Состояние шапки до прокручивания
+    &.static {
+        .header-logo-container {
+            width: 136px;
+            height: 32px;
+        }
+
+        .header-logo {
+            &--scrolled {
+                opacity: 0;
+                width: 0;
+            }
+
+            &--static {
+                opacity: 1;
+                width: 136px;
+                height: 32px;
+            }
+        }
+    }
+
+    // Состояние шапки после прокручивания
+    &.scrolled {
+        .header-logo-container {
+            width: 40px;
+            height: 34px;
+        }
+
+        .header-logo {
+            &--scrolled {
+                opacity: 1;
+                width: 40px;
+                height: 34px;
+            }
+
+            &--static {
+                opacity: 0;
+                width: 0;
+            }
+        }
+    }
+
+    // Состояние шапки при наведении или прокручивании
     &:hover,
-    &.highlighted {
+    &.scrolled {
         background-color: #FFF;
         position: fixed;
 
@@ -42,12 +86,15 @@ $button-padding-mobile: 8px;
         justify-content: space-between;
     }
 
-    .header-logo {
-        width: 136px;
-        height: 32px;
+    .header-logo-container {
         margin-right: 24px;
-        background: url('../images/logo-max.png') center no-repeat;
-        background-size: contain;
+        position: relative;
+    }
+
+    .header-logo {
+        position: absolute;
+        transition: all .3s ease-in-out;
+        width: 100%;
     }
 
     .header-city {
@@ -129,7 +176,6 @@ $button-padding-mobile: 8px;
         display: flex;
         visibility: hidden;
         opacity: 0;
-        // transition: opacity .5s linear .3s;
 
         &__column {
             flex: 0 1;
@@ -423,8 +469,7 @@ $button-padding-mobile: 8px;
             .categories-nav {
                 visibility: visible;
                 opacity: 1;
-                animation: showsUp .5s ease-out backwards;
-                animation-delay: .3s;
+                animation: showsUp .5s ease-out backwards .25s;
                 transform-origin: left center;
                 transition-property: opacity;
 
