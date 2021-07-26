@@ -1,5 +1,5 @@
 const headerElem = document.getElementById('header');
-const headerMenuItems = document.querySelectorAll('#nav-item');
+const headerMenuItems = document.querySelectorAll('#header-menu-item');
 
 window.onscroll = () => {
   const scrolledLenght = window.pageYOffset;
@@ -13,6 +13,11 @@ window.onscroll = () => {
   }
 };
 
+headerMenuItems.forEach((headerMenuItem) => {
+  headerMenuItem.addEventListener('mouseenter', (e) => setHeaderMenuSidebarWidth(e), false);
+  headerMenuItem.addEventListener('mouseleave', (e) => toggleHeaderAnimationOpening(e), false);
+});
+
 function setHeaderMenuSidebarWidth(e) {
   const headerMenuTitle = e.target.querySelector('#header-menu-title');
   const headerMenuSidebar = e.target.querySelector('#header-menu-sidebar');
@@ -23,6 +28,17 @@ function setHeaderMenuSidebarWidth(e) {
   headerMenuSidebar.style.flexBasis = `${elementsDistance}px`;
 }
 
-headerMenuItems.forEach((headerMenuItem) => {
-  headerMenuItem.addEventListener('mouseenter', (e) => setHeaderMenuSidebarWidth(e), false);
-});
+function toggleHeaderAnimationOpening(e) {
+  if (
+    e.relatedTarget && (
+      e.relatedTarget.id === 'header-menu-item' ||
+      e.relatedTarget.closest('#header-menu-item')
+  )) {
+    const headerMenu = e.relatedTarget.querySelector('#header-menu');
+
+    headerMenu?.classList.remove('header-menu--animated');
+    headerMenu?.addEventListener('mouseleave', (e) => {
+      e.target?.classList.add('header-menu--animated');
+    }, false);
+  }
+}

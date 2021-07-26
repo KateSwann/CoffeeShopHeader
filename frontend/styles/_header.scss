@@ -96,17 +96,11 @@ $transition: all .3s ease-in-out;
         z-index: -1;
         display: none;
         perspective: 1000px;
-        animation: growDown .3s ease-in-out forwards;
         transform-origin: top center;
         transition-property: all;
 
-        @keyframes growDown {
-            0% {
-                transform: scaleY(0);
-            }
-            100% {
-                transform: scaleY(1);
-            }
+        &--animated {
+            animation: growDown .3s ease-in-out forwards;
         }
 
         &__sidebar {
@@ -117,6 +111,15 @@ $transition: all .3s ease-in-out;
             max-width: 1270px;
             margin: 0 auto;
             display: flex;
+        }
+
+        @keyframes growDown {
+            0% {
+                transform: scaleY(0);
+            }
+            100% {
+                transform: scaleY(1);
+            }
         }
     }
 
@@ -400,7 +403,8 @@ $transition: all .3s ease-in-out;
             }
         }
 
-        &:hover {
+        // Открытое состояние меню навигации
+        &:hover{
             .nav-item__title {
                 &::before {
                     width: 100%;
@@ -434,7 +438,7 @@ $transition: all .3s ease-in-out;
         }
 
         &__header {
-            padding: 0 20px;
+            margin: 0 20px;
             cursor: pointer;
         }
 
