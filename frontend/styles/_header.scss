@@ -12,22 +12,6 @@ $button-padding-mobile: 8px;
 
 $transition: all .3s ease-in-out;
 
-// .go {
-//     background-color: gold;
-//     animation: hey .3s ease-in-out forwards;
-//     transform-origin: top center;
-//     transition-property: all;
-
-//     @keyframes hey {
-//         0% {
-//             background-color: #FCDD09;
-//         }
-//         100% {
-//             background-color: aquamarine;
-//         }
-//     }
-// }
-
 .header {
     width: 100%;
     display: flex;
@@ -125,26 +109,22 @@ $transition: all .3s ease-in-out;
             }
         }
 
-        &--catalogue {
-            .categories-nav {
-                margin-left: 332px;
-            }
-        }
-
-        &--service {
-            .categories-nav {
-                margin-left: 432px;
-            }
+        &__sidebar {
+            flex: 1;
+            flex: 0 1 290px;
+            height: 280px;
         }
 
         &__content {
             max-width: 1270px;
             margin: 0 auto;
+            display: flex;
         }
     }
 
     .categories-nav {
         display: flex;
+        flex: 1;
         visibility: hidden;
         opacity: 0;
 

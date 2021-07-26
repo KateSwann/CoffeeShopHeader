@@ -1,5 +1,5 @@
 const headerElem = document.getElementById('header');
-// const headerNavigation = document.getElementById('header-nav');
+const headerMenuItems = document.querySelectorAll('#nav-item');
 
 window.onscroll = () => {
   const scrolledLenght = window.pageYOffset;
@@ -13,11 +13,18 @@ window.onscroll = () => {
   }
 };
 
-// headerNavigation.addEventListener('mouseover', (event) => {
-//   event.stopPropagation();
-//   headerNavigation.classList.add('go');
+function setHeaderMenuSidebarWidth(e) {
+  const headerMenuTitle = e.target.querySelector('#header-menu-title');
+  const headerMenuSidebar = e.target.querySelector('#header-menu-sidebar');
 
-//   setTimeout(() => {
-//     headerNavigation.classList.remove('go');
-//   }, 300);
-// });
+  const elementsDistance = +headerMenuTitle.getBoundingClientRect().left -
+    +headerMenuSidebar.getBoundingClientRect().left;
+
+  headerMenuSidebar.style.flexBasis = `${elementsDistance}px`;
+}
+
+headerMenuItems.forEach((headerMenuItem) => {
+  headerMenuItem.addEventListener(
+    'mouseenter', (e) => setHeaderMenuSidebarWidth(e), false
+  );
+});

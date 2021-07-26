@@ -198,23 +198,31 @@ a {
   }
 }
 
-.header .header-menu--catalogue .categories-nav {
-  margin-left: 332px;
-}
-
-.header .header-menu--service .categories-nav {
-  margin-left: 432px;
+.header .header-menu__sidebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 290px;
+          flex: 0 1 290px;
+  height: 280px;
 }
 
 .header .header-menu__content {
   max-width: 1270px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header .categories-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   visibility: hidden;
   opacity: 0;
 }
