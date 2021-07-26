@@ -24,7 +24,5 @@ function setHeaderMenuSidebarWidth(e) {
 }
 
 headerMenuItems.forEach((headerMenuItem) => {
-  headerMenuItem.addEventListener(
-    'mouseenter', (e) => setHeaderMenuSidebarWidth(e), false
-  );
+  headerMenuItem.addEventListener('mouseenter', (e) => setHeaderMenuSidebarWidth(e), false);
 });
