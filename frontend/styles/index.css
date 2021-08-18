@@ -31,6 +31,77 @@
   font-display: swap;
 }
 
+.button-oval {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 1px 13px 0;
+  font-family: 'Neue Machina';
+  font-size: 16px;
+  color: #000;
+  background-color: #F0F0F0;
+  border-radius: 9999px;
+  -webkit-transition: all 0.095s ease-in;
+  transition: all 0.095s ease-in;
+}
+
+.button-oval:hover, .button-oval--open {
+  background-color: #F0F0F0;
+  color: #3E7EDB;
+}
+
+.button-oval--selected, .button-oval--selected.button-oval--open {
+  background-color: #FCDD09;
+  color: #000;
+}
+
+.button-filter-is-active .button-filter {
+  background-color: #FFF;
+}
+
+.button-filter {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  background-color: #F0F0F0;
+  color: #000;
+  font-size: 14px;
+  font-family: 'Roboto Mono';
+  padding: 0 11px 1px 10px;
+  border-radius: 9999px;
+  -webkit-transition: all 0.095s ease-in;
+  transition: all 0.095s ease-in;
+}
+
+.button-filter:hover {
+  color: #3E7EDB;
+  background-color: #FFF;
+}
+
+.button-filter-outline {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 13px 1px;
+  font-size: 14px;
+  font-family: 'Roboto Mono';
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.4);
+  border-radius: 9999px;
+  -webkit-transition: all 0.095s ease-in;
+  transition: all 0.095s ease-in;
+}
+
+.button-filter-outline:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.button-filter-outline--active, .button-filter-outline--active:hover {
+  color: #000;
+  border-color: #000;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

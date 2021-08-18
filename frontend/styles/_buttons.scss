@@ -1,0 +1,84 @@
+$color-white: #FFF;
+$color-grey: #F0F0F0;
+$color-yellow: #FCDD09;
+$color-blue: #3E7EDB;
+$color-black: #000;
+
+$button-transition: all .095s ease-in;
+
+// Oval button
+.button-oval {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 1px 13px 0;
+    font-family: 'Neue Machina';
+    font-size: 16px;
+    color: $color-black;
+    background-color: $color-grey;
+    border-radius: 9999px;
+    transition: $button-transition;
+
+    &:hover,
+    &--open {
+        background-color: $color-grey;
+        color: $color-blue;
+    }
+
+    &--selected,
+    &--selected#{&}--open {
+        background-color: $color-yellow;
+        color: $color-black;
+    }
+}
+
+// Button filter
+.button-filter-is-active {
+    .button-filter {
+        background-color: $color-white;
+    }
+}
+
+.button-filter {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    background-color: $color-grey;
+    color: $color-black;
+    font-size: 14px;
+    font-family: 'Roboto Mono';
+    padding: 0 11px 1px 10px;
+    border-radius: 9999px;
+    transition: $button-transition;
+
+    &:hover {
+        color: $color-blue;
+        background-color: $color-white;
+    }
+}
+
+
+// Button filter outline
+.button-filter-outline {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 13px 1px;
+    font-size: 14px;
+    font-family: 'Roboto Mono';
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,.2);
+    color: rgba(0,0,0,.4);
+    border-radius: 9999px;
+    transition: $button-transition;
+
+    &:hover {
+        border-color: rgba(0,0,0,.4);
+    }
+
+    &--active,
+    &--active:hover {
+        color: $color-black;
+        border-color: $color-black;
+    }
+}

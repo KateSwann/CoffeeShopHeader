@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Coffee Shop</title>
+    <style>
+        td {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>.button-oval</td>
+                <td>
+                    <a href="#" class="button-oval">Фильтр</a>
+                </td>
+            </tr>
+            <tr>
+                <td>.button-oval.button-oval--selected</td>
+                <td>
+                    <a href="#" class="button-oval button-oval--selected">Фильтр</a>
+                </td>
+            </tr>
+            <tr>
+                <td>.button-oval.button-oval--open</td>
+                <td>
+                    <a href="#" class="button-oval button-oval--open">Фильтр</a>
+                </td>
+            </tr>
+            <tr>
+                <td>.button-oval.button-oval--selected.button-oval--open</td>
+                <td>
+                    <a href="#" class="button-oval button-oval--selected button-oval--open">Фильтр</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td>static </td>
+                <td>parent-hover</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.button-filter</td>
+                <td>
+                    <a href="#" class="button-filter">Фильтр</a>
+                </td>
+                <td>
+                    <div class="button-filter-is-active">
+                        <a href="#" class="button-filter">Фильтр</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>.button-filter-outline</td>
+                <td>
+                    <a href="#" class="button-filter-outline">1000г</a>
+                </td>
+            </tr>
+            <tr>
+                <td>.button-filter-outline.button-filter-outline--active</td>
+                <td>
+                    <a href="#" class="button-filter-outline button-filter-outline--active">250г</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
