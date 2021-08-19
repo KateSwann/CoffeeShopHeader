@@ -1,0 +1,139 @@
+$color-white: #FFF;
+$color-grey: #F0F0F0;
+$color-green: #4A9354;
+$color-yellow: #FCDD09;
+$color-blue: #3E7EDB;
+$color-black: #000;
+
+$button-transition: all .095s ease;
+
+// Input, select, textarea
+select,
+textarea,
+input[type=date],
+input[type=email],
+input[type=file],
+input[type=hidden],
+input[type=image],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url] {
+    height: 40px;
+    padding: 2px 16px 0;
+    background-color: $color-grey;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Roboto Mono';
+    transition: $button-transition;
+
+    &:focus {
+        background-color: $color-white;
+        box-shadow: 0 0 0 1px $color-green inset;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: rgba($color: #000000, $alpha: .3)
+    }
+}
+
+// Radio button
+input[type="radio"],
+input[type="checkbox"] {
+    $input-size: 16px;
+    $label-margin: 8px;
+
+    position: absolute;
+    left: -9999px;
+
+    & + .label {
+        display: inline-block;
+        position: relative;
+        padding-left: $input-size + $label-margin;
+        color: $color-black;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: $input-size;
+            height: $input-size;
+            border: none;
+            border-radius: 4px;
+        }
+
+        &::before {
+            background-color: $color-grey;
+        }
+
+        &::after {
+            background-color: $color-black;
+            background-image: url(../images/checkmark.svg);
+            background-repeat: no-repeat;
+            background-position: 5px 4px;
+            transition: $button-transition;
+        }
+    }
+
+    &:not(:checked) + .label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    &:checked + .label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+.input-row {
+    display: flex;
+
+    input {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.select-group {
+    select {
+        width: 100%;
+    }
+}
+
+.input-row,
+.select-group {
+    line-height: 0;
+    font-size: 0;
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+.radio-group {
+    margin-bottom: 30px;
+    display: flex;
+
+    label {
+        flex: 1;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}

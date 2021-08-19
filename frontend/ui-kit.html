@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="styles/index.css">
     <title>Coffee Shop</title>
     <style>
+        body {
+            padding: 20px 40px;
+        }
         td {
-            padding: 20px;
+            padding: 20px 10px;
+        }
+
+        form {
+            padding: 40px 0;
         }
     </style>
 </head>
@@ -82,5 +89,48 @@
             </tr>
         </tbody>
     </table>
+
+    <form action="" class="register">
+        <div class="radio-group">
+            <label for="private-individual">
+                <input type="radio" name="personType" id="private-individual" checked/>
+                <span class="label">Частное лицо</span>
+            </label>
+
+            <label for="legal-entity">
+                <input type="radio" name="personType" id="legal-entity"/>
+                <span class="label">Юридическое лицо</span>
+            </label>
+        </div>
+
+        <div class="input-row">
+            <input type="text" value="" placeholder="Имя" id="firstName" required>
+            <input type="text" value="" placeholder="Фамилия" id="lastName" required>
+        </div>
+
+        <div class="select-group">
+            <select name="organisationType" required>
+               <option value="" disabled selected hidden>Тип организации</option>
+               <option value="">Юридическая компания</option>
+               <option value="">Индивидуальный предприниматель</option>
+            </select>
+        </div>
+
+        <div class="input-row">
+            <input type="email" value="" placeholder="Email" id="email" required>
+        </div>
+
+        <div class="input-row">
+            <input type="password" name="password" placeholder="Пароль" minlength="6" id="password" required>
+        </div>
+
+        <div class="checkbox-group">
+            <label for="remember-me">
+                <input type="checkbox" name="rememberMe" id="remember-me"/>
+                <span class="label">Запомнить меня</span>
+            </label>
+        </div>
+        <button type="submit">Регистрация</button>
+    </form>
 </body>
 </html>
