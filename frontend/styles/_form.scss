@@ -220,15 +220,13 @@ input[type="checkbox"] {
     }
 }
 
-
-
 .input-row {
     display: flex;
 
     input {
         width: 100%;
 
-        &:not(:last-child) {
+        &:not(:last-of-type) {
             margin-right: 8px;
         }
     }
@@ -240,6 +238,28 @@ input[type="checkbox"] {
 
     &:not(:last-child) {
         margin-bottom: 16px;
+    }
+}
+
+.input-wrapper {
+    &--has-helper {
+        position: relative;
+
+        .helper-text {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            height: 13px;
+            padding-top: 2px;
+            font-size: 12px;
+            color: rgba($color: $color-black, $alpha: .3);
+            z-index: 1;
+        }
+
+        input:focus + .helper-text {
+            display: none;
+        }
     }
 }
 

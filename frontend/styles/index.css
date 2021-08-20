@@ -416,7 +416,7 @@ input[type="checkbox"]:checked + .label:after {
   width: 100%;
 }
 
-.input-row input:not(:last-child) {
+.input-row input:not(:last-of-type) {
   margin-right: 8px;
 }
 
@@ -427,6 +427,26 @@ input[type="checkbox"]:checked + .label:after {
 
 .input-row:not(:last-child) {
   margin-bottom: 16px;
+}
+
+.input-wrapper--has-helper {
+  position: relative;
+}
+
+.input-wrapper--has-helper .helper-text {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  height: 13px;
+  padding-top: 2px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.input-wrapper--has-helper input:focus + .helper-text {
+  display: none;
 }
 
 .radio-group {
