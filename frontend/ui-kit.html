@@ -108,12 +108,39 @@
             <input type="text" value="" placeholder="Фамилия" id="lastName" required>
         </div>
 
-        <div class="select-group">
-            <select name="organisationType" required>
-               <option value="" disabled selected hidden>Тип организации</option>
-               <option value="">Юридическая компания</option>
-               <option value="">Индивидуальный предприниматель</option>
-            </select>
+        <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+                <div class="select-box__value">
+                    <input class="select-box__radio" type="radio" id="default" value="0" name="organisationType" checked>
+                    <p class="select-box__radio-text">Вид деятельности</p>
+                </div>
+
+                <div class="select-box__value">
+                    <input class="select-box__radio" type="radio" id="0" value="1" name="organisationType">
+                    <p class="select-box__radio-text">Юридическая компания</p>
+                </div>
+
+                <div class="select-box__value">
+                    <input class="select-box__radio" type="radio" id="1" value="2" name="organisationType">
+                    <p class="select-box__radio-text">Индивидуальный предприниматель</p>
+                </div>
+
+                <div class="select-box__icon" aria-hidden="true"></div>
+            </div>
+
+            <ul class="select-box__list">
+                <li>
+                    <label class="select-box__option" for="0" aria-hidden="aria-hidden">
+                        Юридическая компания
+                    </label>
+                </li>
+
+                <li>
+                    <label class="select-box__option" for="1" aria-hidden="aria-hidden">
+                        Индивидуальный предприниматель
+                    </label>
+                </li>
+            </ul>
         </div>
 
         <div class="input-row">
