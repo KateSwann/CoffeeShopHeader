@@ -358,6 +358,7 @@ input[type="checkbox"]:checked + .label:after {
   border-radius: 8px;
   overflow: hidden;
   background-color: #F0F0F0;
+  z-index: 2;
   -webkit-animation-name: HideList;
           animation-name: HideList;
   -webkit-animation-duration: 0.5s;
@@ -464,6 +465,56 @@ input[type="checkbox"]:checked + .label:after {
 
 .radio-group label:not(:last-child) {
   margin-right: 8px;
+}
+
+.input-button-box-helper {
+  display: none;
+  margin-top: 8px;
+  font: 12px/1.6 'Roboto Mono';
+  color: #EA2B1C;
+}
+
+.input-button-box {
+  padding: 4px;
+  background-color: #FFF;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-button-box--success {
+  -webkit-box-shadow: 0 0 0 1px #4A9354;
+          box-shadow: 0 0 0 1px #4A9354;
+}
+
+.input-button-box--error {
+  -webkit-box-shadow: 0 0 0 1px #EA2B1C;
+          box-shadow: 0 0 0 1px #EA2B1C;
+}
+
+.input-button-box--error + .input-button-box-helper {
+  display: block;
+}
+
+.input-button-box input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #FFF;
+}
+
+.input-button-box input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.input-button-box button {
+  width: 202px;
+  height: 56px;
 }
 
 html {

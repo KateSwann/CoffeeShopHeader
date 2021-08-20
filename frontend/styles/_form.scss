@@ -4,6 +4,7 @@ $color-green: #4A9354;
 $color-yellow: #FCDD09;
 $color-blue: #3E7EDB;
 $color-black: #000;
+$color-red: #EA2B1C;
 
 $button-transition: all .095s ease;
 
@@ -182,6 +183,7 @@ input[type="checkbox"] {
         border-radius: 8px;
         overflow: hidden;
         background-color: $color-grey;
+        z-index: 2;
 
         // Необходимо указать animation-delay, чтобы событию click
         // хватило временни сработать на label, т.к. он пропадает сразу после того,
@@ -273,5 +275,50 @@ input[type="checkbox"] {
         &:not(:last-child) {
             margin-right: 8px;
         }
+    }
+}
+
+// Input with button
+.input-button-box-wrapper {
+}
+
+.input-button-box-helper {
+    display: none;
+    margin-top: 8px;
+    font: 12px/1.6 'Roboto Mono';
+    color: $color-red;
+}
+
+.input-button-box {
+    padding: 4px;
+    background-color: $color-white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+
+    &--success {
+        box-shadow: 0 0 0 1px $color-green;
+    }
+
+    &--error {
+        box-shadow: 0 0 0 1px $color-red;
+
+        & + .input-button-box-helper {
+            display: block;
+        }
+    }
+
+    input {
+        flex: 1;
+        background-color: $color-white;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    button {
+        width: 202px;
+        height: 56px;
     }
 }
